@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Treino Avançado Diego</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111827"/>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#111827; color:#fff; }
+    header { padding:16px; text-align:center; font-size:22px; font-weight:bold; }
+    .tabs { display:flex; justify-content:space-around; background:#1f2933; }
+    .tabs button { flex:1; padding:12px; background:none; border:none; color:#9ca3af; font-size:16px; }
+    .tabs button.active { color:#fff; border-bottom:3px solid #22c55e; }
+    .content { padding:16px; }
+    .card { background:#1f2933; border-radius:12px; padding:12px; margin-bottom:12px; }
+    .card img { width:100%; border-radius:10px; margin-bottom:8px; }
+    h3 { margin:6px 0; }
+    p { margin:4px 0; color:#d1d5db; }
+  </style>
+</head>
+<body>
+
+<header>Treino Avançado Diego</header>
+
+<div class="tabs">
+  <button class="active" onclick="showTab('treino')">Treino</button>
+  <button onclick="showTab('dieta')">Dieta</button>
+</div>
+
+<div id="treino" class="content">
+  <div class="card">
+    <h3>Segunda – Peito + Tríceps</h3>
+    <p>Supino reto – 4x8–10</p>
+    <p>Supino inclinado – 4x10</p>
+    <p>Crucifixo inclinado – 3x12</p>
+    <p>Cross over – 3x12–15</p>
+  </div>
+
+  <div class="card">
+    <h3>Quarta – Pernas + Joelho</h3>
+    <p>Cadeira extensora – 4x15</p>
+    <p>Mesa flexora – 3x15</p>
+    <p>Leg press (pés altos) – 3x12</p>
+    <p>Agachamento na caixa – 3x10</p>
+  </div>
+</div>
+
+<div id="dieta" class="content" style="display:none">
+  <div class="card">
+    <h3>Café da manhã</h3>
+    <p>Ovos + aveia</p>
+  </div>
+  <div class="card">
+    <h3>Almoço</h3>
+    <p>Arroz, frango, legumes</p>
+  </div>
+  <div class="card">
+    <h3>Jantar</h3>
+    <p>Carne magra + salada</p>
+  </div>
+</div>
+
+<script>
+function showTab(tab) {
+  document.getElementById('treino').style.display = tab === 'treino' ? 'block' : 'none';
+  document.getElementById('dieta').style.display = tab === 'dieta' ? 'block' : 'none';
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
